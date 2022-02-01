@@ -1,10 +1,8 @@
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const sechma = mongoose.Schema;
-
-const post = new sechma({
+const PostSchema = new Schema({
   userId: {
-    type: sechma.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     required: true,
   },
   content: {
@@ -18,12 +16,12 @@ const post = new sechma({
     type: Number,
     likeBy: [
       {
-        type: sechma.Types.ObjectId,
+        type: Schema.Types.ObjectId,
       },
     ],
   },
 });
 
-const postModel = mongoose.model('posts', post);
+const postModel = model('socialPost', PostSchema);
 
 export default postModel;

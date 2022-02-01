@@ -31,6 +31,6 @@ const users = new schema({
   },
 });
 
-const userModel = mongoose.model('users', users);
+const userModel = mongoose.model('socialUsers', users);
 
 export default userModel;

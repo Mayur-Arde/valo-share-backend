@@ -17,13 +17,14 @@ app.use(cors());
 
 const PORT = process.env.PORT;
 
+connectToDatabase();
+
 app.get('/', (req, res) => {
   res.send('hello valo-share app');
 });
 
-connectToDatabase();
 
-app.use('/posts', userRouter);
+app.use('/users', userRouter);
 app.use('/posts', postRouter);
 
 app.use(routeNotFound);
