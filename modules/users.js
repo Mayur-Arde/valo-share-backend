@@ -21,6 +21,10 @@ const users = new schema({
     required: true,
     unique: true,
   },
+  password: {
+    type: String,
+    required: "password is required"
+  },
   bio: {
     type: String,
     required: true,
